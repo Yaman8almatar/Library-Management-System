@@ -1,44 +1,63 @@
-﻿using System.Data.SqlClient;
+﻿using Microsoft.Data.SqlClient;
 using LibrarySystem.Models;
+using LibrarySystem.Data;
 
 namespace LibrarySystem.Repositories
 {
     public class UserRepository
     {
-        private DatabaseContext db = new DatabaseContext();
-
-        public User GetById(int userId)
-        {
-            using SqlConnection con = db.GetConnection();
-            con.Open();
-            // تنفيذ Select لاحقًا
-            return null;
-        }
-
         public User GetByUsername(string username)
         {
-            using SqlConnection con = db.GetConnection();
-            con.Open();
-            return null;
-        }
+            User user = null;
+            using (var conn = LibraryDbContext.GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT * FROM Users WHERE Username = @u";
+                using (var cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@u", username);
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            // تحديد نوع المستخدم لإنشاء الكائن المناسب
+                            string type = reader["UserType"].ToString();
+                            if (type == "Member")
+                            {
+                                user = new Member { JoinDate = Convert.ToDateTime(reader["JoinDate"]) };
+                            }
+                            else
+                            {
+                                user = new Librarian { EmployeeId = reader["EmployeeId"].ToString() };
+                            }
 
-        public User Add(User user)
-        {
-            using SqlConnection con = db.GetConnection();
-            con.Open();
+                            // تعبئة البيانات المشتركة
+                            user.UserId = (int)reader["UserId"];
+                            user.Name = reader["Name"].ToString();
+                            user.Username = reader["Username"].ToString();
+                            user.PasswordHash = reader["PasswordHash"].ToString();
+                        }
+                    }
+                }
+            }
             return user;
         }
 
-        public void Update(User user)
+        public void Add(User user)
         {
-            using SqlConnection con = db.GetConnection();
-            con.Open();
-        }
-
-        public void Delete(int userId)
-        {
-            using SqlConnection con = db.GetConnection();
-            con.Open();
+            using (var conn = LibraryDbContext.GetConnection())
+            {
+                conn.Open();
+                string query = "INSERT INTO Users (Name, Username, PasswordHash, UserType) VALUES (@n, @u, @p, @t)";
+                using (var cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@n", user.Name);
+                    cmd.Parameters.AddWithValue("@u", user.Username);
+                    cmd.Parameters.AddWithValue("@p", user.PasswordHash);
+                    cmd.Parameters.AddWithValue("@t", user.UserType);
+                    cmd.ExecuteNonQuery();
+                }
+            }
         }
     }
 }
