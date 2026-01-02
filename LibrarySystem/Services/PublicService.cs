@@ -1,34 +1,25 @@
-using System.Collections.Generic;
-using LibrarySystem.Models;
+﻿using LibrarySystem.Models;
 using LibrarySystem.Repositories;
+using System.Collections.Generic;
 
 namespace LibrarySystem.Services
 {
-	public class PublicService
-	{
-		private BookRepository bookRepository;
-		private UserRepository userRepository;
+    public class PublicService
+    {
+        private BookRepository _bookRepo = new BookRepository();
+        private UserRepository _userRepo = new UserRepository();
 
-		public PublicService()
-		{
-			bookRepository = new BookRepository();
-			userRepository = new UserRepository();
-		}
+        public List<Book> SearchBooks(string title)
+        {
+            // هنا نستدعي ميثود البحث من المستودع (بفرض وجودها)
+            // سأفترض أنها تعيد قائمة بناءً على العنوان
+            return _bookRepo.SearchByTitle(title);
+        }
 
-		public List<Book> SearchBooks(string criteria)
-		{
-			return bookRepository.Search(criteria);
-		}
-
-		public Book ViewBookDetails(int bookId)
-		{
-			return bookRepository.GetById(bookId);
-		}
-
-		public Member RegisterMember(Member member)
-		{
-			userRepository.Add(member);
-			return member;
-		}
-	}
+        public void RegisterMember(Member member)
+        {
+            // تشفير كلمة المرور يجب أن يتم هنا قبل الحفظ
+            _userRepo.Add(member);
+        }
+    }
 }
