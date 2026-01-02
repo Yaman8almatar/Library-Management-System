@@ -1,38 +1,41 @@
-using LibrarySystem.Models;
+﻿using LibrarySystem.Models;
 using LibrarySystem.Repositories;
+using LibrarySystem.Data;
 
 namespace LibrarySystem.Services
 {
     public class AdminService
     {
-        private UserRepository userRepository;
-        private BookRepository bookRepository;
+        private BookRepository _bookRepo = new BookRepository();
+        private UserRepository _userRepo = new UserRepository();
 
-        public AdminService()
+        public void AddBook(Book book)
         {
-            userRepository = new UserRepository();
-            bookRepository = new BookRepository();
-        }
-
-        public Book AddBook(Book book)
-        {
-            return bookRepository.Add(book);
-        }
-
-        public void UpdateBook(Book book)
-        {
-            bookRepository.Update(book);
-        }
-
-        public void DeleteBook(int bookId)
-        {
-            bookRepository.Delete(bookId);
+            // منطق إضافة كتاب جديد عبر المستودع
+            using (var conn = LibraryDbContext.GetConnection())
+            {
+                conn.Open();
+                string query = "INSERT INTO Books (Title, Author, Year, Status, TotalCopies, AvailableCopies) VALUES (@t, @a, @y, @s, @tc, @ac)";
+                using (var cmd = new Microsoft.Data.SqlClient.SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@t", book.Title);
+                    cmd.Parameters.AddWithValue("@a", book.Author);
+                    cmd.Parameters.AddWithValue("@y", book.Year);
+                    cmd.Parameters.AddWithValue("@s", "Available");
+                    cmd.Parameters.AddWithValue("@tc", book.TotalCopies);
+                    cmd.Parameters.AddWithValue("@ac", book.TotalCopies);
+                    cmd.ExecuteNonQuery();
+                }
+            }
         }
 
         public void ManageUser(int userId, string action)
         {
-            if (action == "delete")
-                userRepository.Delete(userId);
+            if (action == "Delete")
+            {
+                // تنفيذ حذف مستخدم
+            }
+            // يمكن إضافة تعديل البيانات هنا
         }
     }
 }
