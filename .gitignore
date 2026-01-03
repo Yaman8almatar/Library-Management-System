@@ -1,0 +1,19 @@
+# Visual Studio temporary files
+.vs/
+*.user
+*.suo
+
+# Build Folders
+bin/
+obj/
+
+# NuGet
+*.nupkg
+project.nuget.cache
+
+# Database files (يمكن تعديل حسب احتياجك)
+*.mdf
+*.ldf
+
+# PowerPoint / Docs (إذا لا تريد رفع النسخة داخل LibrarySystem)
+LibrarySystem/Docs/
