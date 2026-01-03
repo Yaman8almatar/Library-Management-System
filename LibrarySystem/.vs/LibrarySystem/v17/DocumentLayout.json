@@ -1,0 +1,319 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ASUS\\Library-Management-System\\LibrarySystem\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{26207B70-2098-4573-862F-ACEDCE264473}|LibrarySystem.csproj|c:\\users\\asus\\library-management-system\\librarysystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26207B70-2098-4573-862F-ACEDCE264473}|LibrarySystem.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26207B70-2098-4573-862F-ACEDCE264473}|LibrarySystem.csproj|c:\\users\\asus\\library-management-system\\librarysystem\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26207B70-2098-4573-862F-ACEDCE264473}|LibrarySystem.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26207B70-2098-4573-862F-ACEDCE264473}|LibrarySystem.csproj|c:\\users\\asus\\library-management-system\\librarysystem\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26207B70-2098-4573-862F-ACEDCE264473}|LibrarySystem.csproj|solutionrelative:repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26207B70-2098-4573-862F-ACEDCE264473}|LibrarySystem.csproj|c:\\users\\asus\\library-management-system\\librarysystem\\services\\adminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26207B70-2098-4573-862F-ACEDCE264473}|LibrarySystem.csproj|solutionrelative:services\\adminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26207B70-2098-4573-862F-ACEDCE264473}|LibrarySystem.csproj|c:\\users\\asus\\library-management-system\\librarysystem\\repositories\\finerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26207B70-2098-4573-862F-ACEDCE264473}|LibrarySystem.csproj|solutionrelative:repositories\\finerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26207B70-2098-4573-862F-ACEDCE264473}|LibrarySystem.csproj|c:\\users\\asus\\library-management-system\\librarysystem\\repositories\\loanrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26207B70-2098-4573-862F-ACEDCE264473}|LibrarySystem.csproj|solutionrelative:repositories\\loanrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26207B70-2098-4573-862F-ACEDCE264473}|LibrarySystem.csproj|c:\\users\\asus\\library-management-system\\librarysystem\\services\\libraryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26207B70-2098-4573-862F-ACEDCE264473}|LibrarySystem.csproj|solutionrelative:services\\libraryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26207B70-2098-4573-862F-ACEDCE264473}|LibrarySystem.csproj|c:\\users\\asus\\library-management-system\\librarysystem\\repositories\\reservationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26207B70-2098-4573-862F-ACEDCE264473}|LibrarySystem.csproj|solutionrelative:repositories\\reservationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26207B70-2098-4573-862F-ACEDCE264473}|LibrarySystem.csproj|c:\\users\\asus\\library-management-system\\librarysystem\\services\\publicservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26207B70-2098-4573-862F-ACEDCE264473}|LibrarySystem.csproj|solutionrelative:services\\publicservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26207B70-2098-4573-862F-ACEDCE264473}|LibrarySystem.csproj|c:\\users\\asus\\library-management-system\\librarysystem\\repositories\\bookrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26207B70-2098-4573-862F-ACEDCE264473}|LibrarySystem.csproj|solutionrelative:repositories\\bookrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26207B70-2098-4573-862F-ACEDCE264473}|LibrarySystem.csproj|c:\\users\\asus\\library-management-system\\librarysystem\\data\\librarydbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26207B70-2098-4573-862F-ACEDCE264473}|LibrarySystem.csproj|solutionrelative:data\\librarydbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26207B70-2098-4573-862F-ACEDCE264473}|LibrarySystem.csproj|c:\\users\\asus\\library-management-system\\librarysystem\\librarysystem.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{26207B70-2098-4573-862F-ACEDCE264473}|LibrarySystem.csproj|solutionrelative:librarysystem.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26207B70-2098-4573-862F-ACEDCE264473}|LibrarySystem.csproj|c:\\users\\asus\\library-management-system\\librarysystem\\models\\reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26207B70-2098-4573-862F-ACEDCE264473}|LibrarySystem.csproj|solutionrelative:models\\reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26207B70-2098-4573-862F-ACEDCE264473}|LibrarySystem.csproj|c:\\users\\asus\\library-management-system\\librarysystem\\models\\loan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26207B70-2098-4573-862F-ACEDCE264473}|LibrarySystem.csproj|solutionrelative:models\\loan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26207B70-2098-4573-862F-ACEDCE264473}|LibrarySystem.csproj|c:\\users\\asus\\library-management-system\\librarysystem\\models\\librarian.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26207B70-2098-4573-862F-ACEDCE264473}|LibrarySystem.csproj|solutionrelative:models\\librarian.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26207B70-2098-4573-862F-ACEDCE264473}|LibrarySystem.csproj|c:\\users\\asus\\library-management-system\\librarysystem\\models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26207B70-2098-4573-862F-ACEDCE264473}|LibrarySystem.csproj|solutionrelative:models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26207B70-2098-4573-862F-ACEDCE264473}|LibrarySystem.csproj|c:\\users\\asus\\library-management-system\\librarysystem\\models\\member.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26207B70-2098-4573-862F-ACEDCE264473}|LibrarySystem.csproj|solutionrelative:models\\member.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26207B70-2098-4573-862F-ACEDCE264473}|LibrarySystem.csproj|c:\\users\\asus\\library-management-system\\librarysystem\\models\\fine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26207B70-2098-4573-862F-ACEDCE264473}|LibrarySystem.csproj|solutionrelative:models\\fine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Library-Management-System\\LibrarySystem\\Repositories\\UserRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\UserRepository.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Library-Management-System\\LibrarySystem\\Repositories\\UserRepository.cs*",
+              "RelativeToolTip": "Repositories\\UserRepository.cs*",
+              "ViewState": "AQIAAEYAAAAAAAAAAAAkwAIAAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-02T23:48:07.892Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ReservationRepository.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Library-Management-System\\LibrarySystem\\Repositories\\ReservationRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\ReservationRepository.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Library-Management-System\\LibrarySystem\\Repositories\\ReservationRepository.cs*",
+              "RelativeToolTip": "Repositories\\ReservationRepository.cs*",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABkAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-03T14:27:19.916Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LoanRepository.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Library-Management-System\\LibrarySystem\\Repositories\\LoanRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\LoanRepository.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Library-Management-System\\LibrarySystem\\Repositories\\LoanRepository.cs*",
+              "RelativeToolTip": "Repositories\\LoanRepository.cs*",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-03T14:27:16.375Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AdminService.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Library-Management-System\\LibrarySystem\\Services\\AdminService.cs",
+              "RelativeDocumentMoniker": "Services\\AdminService.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Library-Management-System\\LibrarySystem\\Services\\AdminService.cs*",
+              "RelativeToolTip": "Services\\AdminService.cs*",
+              "ViewState": "AQIAABcAAAAAAAAAAAAgwC8AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-02T23:28:51.464Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "LibraryService.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Library-Management-System\\LibrarySystem\\Services\\LibraryService.cs",
+              "RelativeDocumentMoniker": "Services\\LibraryService.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Library-Management-System\\LibrarySystem\\Services\\LibraryService.cs*",
+              "RelativeToolTip": "Services\\LibraryService.cs*",
+              "ViewState": "AQIAADsAAAAAAAAAAAAmwKEAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-03T14:09:58.103Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FineRepository.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Library-Management-System\\LibrarySystem\\Repositories\\FineRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\FineRepository.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Library-Management-System\\LibrarySystem\\Repositories\\FineRepository.cs*",
+              "RelativeToolTip": "Repositories\\FineRepository.cs*",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-02T23:47:59.646Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "PublicService.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Library-Management-System\\LibrarySystem\\Services\\PublicService.cs",
+              "RelativeDocumentMoniker": "Services\\PublicService.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Library-Management-System\\LibrarySystem\\Services\\PublicService.cs*",
+              "RelativeToolTip": "Services\\PublicService.cs*",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACYAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-03T14:13:01.703Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Library-Management-System\\LibrarySystem\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Library-Management-System\\LibrarySystem\\Program.cs*",
+              "RelativeToolTip": "Program.cs*",
+              "ViewState": "AQIAABkAAAAAAAAAAAAAwDcAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-02T22:04:51.479Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Library-Management-System\\LibrarySystem\\Models\\User.cs",
+              "RelativeDocumentMoniker": "Models\\User.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Library-Management-System\\LibrarySystem\\Models\\User.cs*",
+              "RelativeToolTip": "Models\\User.cs*",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-03T14:15:11.981Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "BookRepository.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Library-Management-System\\LibrarySystem\\Repositories\\BookRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\BookRepository.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Library-Management-System\\LibrarySystem\\Repositories\\BookRepository.cs*",
+              "RelativeToolTip": "Repositories\\BookRepository.cs*",
+              "ViewState": "AQIAAKkAAAAAAAAAAAAowLsAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-02T23:48:01.331Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "LibraryDBcontext.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Library-Management-System\\LibrarySystem\\Data\\LibraryDBcontext.cs",
+              "RelativeDocumentMoniker": "Data\\LibraryDBcontext.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Library-Management-System\\LibrarySystem\\Data\\LibraryDBcontext.cs*",
+              "RelativeToolTip": "Data\\LibraryDBcontext.cs*",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-02T22:14:51.922Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "LibrarySystem.csproj",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Library-Management-System\\LibrarySystem\\LibrarySystem.csproj",
+              "RelativeDocumentMoniker": "LibrarySystem.csproj",
+              "ToolTip": "C:\\Users\\ASUS\\Library-Management-System\\LibrarySystem\\LibrarySystem.csproj",
+              "RelativeToolTip": "LibrarySystem.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-01-02T22:08:46.532Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Fine.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Library-Management-System\\LibrarySystem\\Models\\Fine.cs",
+              "RelativeDocumentMoniker": "Models\\Fine.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Library-Management-System\\LibrarySystem\\Models\\Fine.cs",
+              "RelativeToolTip": "Models\\Fine.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-03T14:17:28.336Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Member.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Library-Management-System\\LibrarySystem\\Models\\Member.cs",
+              "RelativeDocumentMoniker": "Models\\Member.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Library-Management-System\\LibrarySystem\\Models\\Member.cs",
+              "RelativeToolTip": "Models\\Member.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-03T14:15:19.915Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Book.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Library-Management-System\\LibrarySystem\\Models\\Book.cs",
+              "RelativeDocumentMoniker": "Models\\Book.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Library-Management-System\\LibrarySystem\\Models\\Book.cs",
+              "RelativeToolTip": "Models\\Book.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-03T14:14:02.08Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Librarian.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Library-Management-System\\LibrarySystem\\Models\\Librarian.cs",
+              "RelativeDocumentMoniker": "Models\\Librarian.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Library-Management-System\\LibrarySystem\\Models\\Librarian.cs",
+              "RelativeToolTip": "Models\\Librarian.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-03T14:15:41.165Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Loan.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Library-Management-System\\LibrarySystem\\Models\\Loan.cs",
+              "RelativeDocumentMoniker": "Models\\Loan.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Library-Management-System\\LibrarySystem\\Models\\Loan.cs",
+              "RelativeToolTip": "Models\\Loan.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-03T14:17:03.794Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Reservation.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Library-Management-System\\LibrarySystem\\Models\\Reservation.cs",
+              "RelativeDocumentMoniker": "Models\\Reservation.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Library-Management-System\\LibrarySystem\\Models\\Reservation.cs",
+              "RelativeToolTip": "Models\\Reservation.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-03T14:17:22.36Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
