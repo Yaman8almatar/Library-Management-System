@@ -1,41 +1,48 @@
-﻿using LibrarySystem.Data;
-using LibrarySystem.Models;
+﻿using LibrarySystem.Models;
 using LibrarySystem.Repositories;
+using System.Collections.Generic;
 
 namespace LibrarySystem.Services
 {
     public class AdminService
     {
-        private BookRepository _bookRepo = new BookRepository();
-        private UserRepository _userRepo = new UserRepository();
+        private readonly BookRepository _bookRepo;
+        private readonly UserRepository _userRepo;
+
+        public AdminService()
+        {
+            _bookRepo = new BookRepository();
+            _userRepo = new UserRepository();
+        }
 
         public void AddBook(Book book)
         {
-            // منطق إضافة كتاب جديد عبر المستودع
-            using (var conn = LibraryDbContext.GetConnection())
-            {
-                conn.Open();
-                string query = "INSERT INTO Books (Title, Author, Year, Status, TotalCopies, AvailableCopies) VALUES (@t, @a, @y, @s, @tc, @ac)";
-                using (var cmd = new Microsoft.Data.SqlClient.SqlCommand(query, conn))
-                {
-                    cmd.Parameters.AddWithValue("@t", book.Title);
-                    cmd.Parameters.AddWithValue("@a", book.Author);
-                    cmd.Parameters.AddWithValue("@y", book.Year);
-                    cmd.Parameters.AddWithValue("@s", "Available");
-                    cmd.Parameters.AddWithValue("@tc", book.TotalCopies);
-                    cmd.Parameters.AddWithValue("@ac", book.TotalCopies);
-                    cmd.ExecuteNonQuery();
-                }
-            }
+            _bookRepo.Add(book);
         }
 
-        public void ManageUser(int userId, string action)
+        public void UpdateBook(Book book)
         {
-            if (action == "Delete")
-            {
-                // تنفيذ حذف مستخدم
-            }
-            // يمكن إضافة تعديل البيانات هنا
+            _bookRepo.Update(book);
+        }
+
+        public void DeleteBook(int bookId)
+        {
+            _bookRepo.Delete(bookId);
+        }
+
+        public List<Book> GetAllBooks()
+        {
+            return _bookRepo.GetAll();
+        }
+
+        public void DeleteUser(int userId)
+        {
+            _userRepo.Delete(userId);
+        }
+
+        public List<User> GetAllUsers()
+        {
+            return _userRepo.GetAll();
         }
     }
 }

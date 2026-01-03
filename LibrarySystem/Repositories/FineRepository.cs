@@ -1,69 +1,69 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using System;
+using System.Collections.Generic;
+using Microsoft.Data.SqlClient;
 using LibrarySystem.Data;
-using System;
 using LibrarySystem.Models;
 
 namespace LibrarySystem.Repositories
 {
     public class FineRepository
     {
-        // إنشاء غرامة جديدة (تُستدعى عند إرجاع كتاب متأخر)
         public void Create(Fine fine)
         {
             using (var conn = LibraryDbContext.GetConnection())
             {
                 conn.Open();
-                string query = "INSERT INTO Fines (LoanId, Amount, PaymentStatus) VALUES (@lid, @amt, @status)";
+                string query = "INSERT INTO Fines (LoanId, Amount, PaymentStatus) VALUES (@loan,@amt,@status)";
                 using (var cmd = new SqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@lid", fine.LoanId);
+                    cmd.Parameters.AddWithValue("@loan", fine.LoanId);
                     cmd.Parameters.AddWithValue("@amt", fine.Amount);
-                    cmd.Parameters.AddWithValue("@status", "Unpaid");
+                    cmd.Parameters.AddWithValue("@status", fine.PaymentStatus ?? "Unpaid");
                     cmd.ExecuteNonQuery();
                 }
             }
         }
 
-        // جلب غرامة مرتبطة بإعارة معينة
-        public Fine GetByLoan(int loanId)
+        public List<Fine> GetByUser(int userId)
         {
-            Fine fine = null;
-            using (var conn =   LibraryDbContext.GetConnection())
+            List<Fine> fines = new List<Fine>();
+            using (var conn = LibraryDbContext.GetConnection())
             {
                 conn.Open();
-                string query = "SELECT * FROM Fines WHERE LoanId = @lid";
+                string query = @"SELECT f.* FROM Fines f
+                                 INNER JOIN Loans l ON f.LoanId=l.LoanId
+                                 WHERE l.UserId=@uid";
                 using (var cmd = new SqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@lid", loanId);
+                    cmd.Parameters.AddWithValue("@uid", userId);
                     using (var reader = cmd.ExecuteReader())
                     {
-                        if (reader.Read())
+                        while (reader.Read())
                         {
-                            fine = new Fine
+                            fines.Add(new Fine
                             {
                                 FineId = (int)reader["FineId"],
                                 LoanId = (int)reader["LoanId"],
                                 Amount = (decimal)reader["Amount"],
                                 PaymentStatus = reader["PaymentStatus"].ToString()
-                            };
+                            });
                         }
                     }
                 }
             }
-            return fine;
+            return fines;
         }
 
-        // تحديث حالة الدفع (UC-007)
-        public void UpdateStatus(int fineId, string status)
+        public void UpdateStatus(int fineId, string newStatus)
         {
             using (var conn = LibraryDbContext.GetConnection())
             {
                 conn.Open();
-                string query = "UPDATE Fines SET PaymentStatus = @s WHERE FineId = @id";
+                string query = "UPDATE Fines SET PaymentStatus=@status WHERE FineId=@id";
                 using (var cmd = new SqlCommand(query, conn))
                 {
+                    cmd.Parameters.AddWithValue("@status", newStatus);
                     cmd.Parameters.AddWithValue("@id", fineId);
-                    cmd.Parameters.AddWithValue("@s", status);
                     cmd.ExecuteNonQuery();
                 }
             }

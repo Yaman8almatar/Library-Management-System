@@ -11,6 +11,9 @@ namespace LibrarySystem.Models
         public string Username { get; set; }
         public string PasswordHash { get; set; }
         public string Email { get; set; }
-        public string UserType { get; set; } // "Member" or "Librarian" لتسهيل التعامل مع الداتا بيس
+        public DateTime? JoinDate { get; set; }     // Optional for members
+        public string EmployeeId { get; set; }      // Optional for librarians
+
+        public string UserType { get; set; }
     }
 }

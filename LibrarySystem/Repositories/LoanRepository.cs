@@ -1,6 +1,8 @@
-﻿using Microsoft.Data.SqlClient;
-using LibrarySystem.Models;
+﻿using System;
+using System.Collections.Generic;
+using Microsoft.Data.SqlClient;
 using LibrarySystem.Data;
+using LibrarySystem.Models;
 
 namespace LibrarySystem.Repositories
 {
@@ -11,81 +13,105 @@ namespace LibrarySystem.Repositories
             using (var conn = LibraryDbContext.GetConnection())
             {
                 conn.Open();
-                string query = @"INSERT INTO Loans (UserId, BookId, StartDate, DueDate, Status) 
-                                 VALUES (@uid, @bid, @start, @due, @stat)";
-
+                string query = "INSERT INTO Loans (UserId, BookId, StartDate, DueDate, Status) VALUES (@uid,@bid,@start,@due,@status)";
                 using (var cmd = new SqlCommand(query, conn))
                 {
-                    // هنا يتم الربط الفعلي: نرسل ID المستخدم و ID الكتاب للداتا بيس
                     cmd.Parameters.AddWithValue("@uid", loan.UserId);
                     cmd.Parameters.AddWithValue("@bid", loan.BookId);
                     cmd.Parameters.AddWithValue("@start", loan.StartDate);
                     cmd.Parameters.AddWithValue("@due", loan.DueDate);
-                    cmd.Parameters.AddWithValue("@stat", "Active");
-
+                    cmd.Parameters.AddWithValue("@status", loan.Status ?? "Active");
                     cmd.ExecuteNonQuery();
                 }
             }
         }
 
-        // 1. دالة لجلب استعارة بالـ ID (يحتاجها كود الإرجاع والتجديد)
         public Loan GetById(int loanId)
         {
-            Loan loan = null;
             using (var conn = LibraryDbContext.GetConnection())
             {
                 conn.Open();
-                string query = "SELECT * FROM Loans WHERE LoanId = @id";
-                using (var cmd = new Microsoft.Data.SqlClient.SqlCommand(query, conn))
+                string query = "SELECT * FROM Loans WHERE LoanId=@id";
+                using (var cmd = new SqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@id", loanId);
                     using (var reader = cmd.ExecuteReader())
                     {
                         if (reader.Read())
                         {
-                            loan = new Loan
+                            return new Loan
                             {
                                 LoanId = (int)reader["LoanId"],
                                 UserId = (int)reader["UserId"],
                                 BookId = (int)reader["BookId"],
                                 StartDate = Convert.ToDateTime(reader["StartDate"]),
                                 DueDate = Convert.ToDateTime(reader["DueDate"]),
+                                ReturnDate = reader["ReturnDate"] == DBNull.Value ? null : Convert.ToDateTime(reader["ReturnDate"]),
                                 Status = reader["Status"].ToString()
                             };
                         }
                     }
                 }
             }
-            return loan;
+            return null;
         }
 
-        // 2. دالة لإغلاق الاستعارة (تحديث تاريخ الإرجاع)
+        public List<Loan> GetByUser(int userId)
+        {
+            List<Loan> loans = new List<Loan>();
+            using (var conn = LibraryDbContext.GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT * FROM Loans WHERE UserId=@uid";
+                using (var cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@uid", userId);
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            loans.Add(new Loan
+                            {
+                                LoanId = (int)reader["LoanId"],
+                                UserId = (int)reader["UserId"],
+                                BookId = (int)reader["BookId"],
+                                StartDate = Convert.ToDateTime(reader["StartDate"]),
+                                DueDate = Convert.ToDateTime(reader["DueDate"]),
+                                ReturnDate = reader["ReturnDate"] == DBNull.Value ? null : Convert.ToDateTime(reader["ReturnDate"]),
+                                Status = reader["Status"].ToString()
+                            });
+                        }
+                    }
+                }
+            }
+            return loans;
+        }
+
         public void CloseLoan(int loanId, DateTime returnDate)
         {
             using (var conn = LibraryDbContext.GetConnection())
             {
                 conn.Open();
-                string query = "UPDATE Loans SET ReturnDate = @rd, Status = 'Closed' WHERE LoanId = @id";
-                using (var cmd = new Microsoft.Data.SqlClient.SqlCommand(query, conn))
+                string query = "UPDATE Loans SET ReturnDate=@ret, Status='Closed' WHERE LoanId=@id";
+                using (var cmd = new SqlCommand(query, conn))
                 {
+                    cmd.Parameters.AddWithValue("@ret", returnDate);
                     cmd.Parameters.AddWithValue("@id", loanId);
-                    cmd.Parameters.AddWithValue("@rd", returnDate);
                     cmd.ExecuteNonQuery();
                 }
             }
         }
 
-        // 3. دالة لتحديث تاريخ الاستحقاق (للتجديد)
-        public void UpdateDueDate(int loanId, DateTime newDate)
+        public void UpdateDueDate(int loanId, DateTime newDueDate)
         {
             using (var conn = LibraryDbContext.GetConnection())
             {
                 conn.Open();
-                string query = "UPDATE Loans SET DueDate = @nd WHERE LoanId = @id";
-                using (var cmd = new Microsoft.Data.SqlClient.SqlCommand(query, conn))
+                string query = "UPDATE Loans SET DueDate=@due WHERE LoanId=@id";
+                using (var cmd = new SqlCommand(query, conn))
                 {
+                    cmd.Parameters.AddWithValue("@due", newDueDate);
                     cmd.Parameters.AddWithValue("@id", loanId);
-                    cmd.Parameters.AddWithValue("@nd", newDate);
                     cmd.ExecuteNonQuery();
                 }
             }

@@ -6,19 +6,33 @@ namespace LibrarySystem.Services
 {
     public class PublicService
     {
-        private BookRepository _bookRepo = new BookRepository();
-        private UserRepository _userRepo = new UserRepository();
+        private readonly BookRepository _bookRepo;
+        private readonly UserRepository _userRepo;
+
+        public PublicService()
+        {
+            _bookRepo = new BookRepository();
+            _userRepo = new UserRepository();
+        }
 
         public List<Book> SearchBooks(string title)
         {
-            // هنا نستدعي ميثود البحث من المستودع (بفرض وجودها)
-            // سأفترض أنها تعيد قائمة بناءً على العنوان
             return _bookRepo.SearchByTitle(title);
+        }
+
+        public List<Book> GetAllBooks()
+        {
+            return _bookRepo.GetAll();
+        }
+
+        public Book GetBookById(int bookId)
+        {
+            return _bookRepo.GetById(bookId);
         }
 
         public void RegisterMember(Member member)
         {
-            // تشفير كلمة المرور يجب أن يتم هنا قبل الحفظ
+            // لاحقاً: هش كلمة السر هنا قبل الحفظ
             _userRepo.Add(member);
         }
     }
