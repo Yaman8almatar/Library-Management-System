@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace LibrarySystem.Models
+﻿namespace LibrarySystem.Models
 {
     public class Fine
     {
         public int FineId { get; set; }
+        public int LoanId { get; set; } // FK Linking
         public decimal Amount { get; set; }
-        public string PaymentStatus { get; set; }
-
-        // FK
-        public int LoanId { get; set; }
+        public string PaymentStatus { get; set; } // "Unpaid", "Paid"
     }
 }

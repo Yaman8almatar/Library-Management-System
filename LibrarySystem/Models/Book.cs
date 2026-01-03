@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace LibrarySystem.Models
 {
@@ -10,9 +8,14 @@ namespace LibrarySystem.Models
         public string Title { get; set; }
         public string Author { get; set; }
         public int Year { get; set; }
-        public string Status { get; set; }
+        public string Status { get; set; } // "Available", "Borrowed", "Reserved"
         public int TotalCopies { get; set; }
         public int AvailableCopies { get; set; }
+
+        // Logic Method inside Entity
+        public bool IsAvailable()
+        {
+            return AvailableCopies > 0 && Status == "Available";
+        }
     }
 }
-
